@@ -237,29 +237,25 @@ def main():
     local_audio_file = os.path.expanduser(
         "~/Downloads/how-dictop-works.mp3"
     )  # Replace with your audio file path
+    if not Path(local_audio_file).exists():
+        print(f"❌ File not found: {local_audio_file}")
+        return
 
     # Example 1: List available models
-    # list_available_models(api_instance)
+    list_available_models(api_instance)
 
     # Example 2: Transcribe a local file (you'll need to provide your own audio file)
-    # if Path(local_audio_file).exists():
-    #     transcribe_local_file(api_instance, local_audio_file)
-    # else:
-    #     print(f"ℹ️  Skipping local file example - {local_audio_file} not found")
+    transcribe_local_file(api_instance, local_audio_file)
 
     # Example 3: Transcribe from remote URL (example URL - replace with real audio URL)
     sample_audio_url = "https://github.com/Azure-Samples/cognitive-services-speech-sdk/raw/master/samples/cpp/windows/console/samples/enrollment_audio_katie.wav"
     transcribe_remote_url(api_instance, sample_audio_url)
 
     # Example 4: Advanced features
-    # if Path(local_audio_file).exists():
-    #     transcribe_with_advanced_features(api_instance, local_audio_file)
+    transcribe_with_advanced_features(api_instance, local_audio_file)
 
     # Example 5: Transcribe with default options
-    # if Path(local_audio_file).exists():
-    #     transcribe_local_file_with_default_options(api_instance, local_audio_file)
-    # else:
-    #     print(f"ℹ️  Skipping local file example - {local_audio_file} not found")
+    transcribe_local_file_with_default_options(api_instance, local_audio_file)
 
     print("\n✨ Examples completed!")
 
