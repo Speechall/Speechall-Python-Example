@@ -43,8 +43,7 @@ def setup_client():
     # Configure the API client
     configuration = Configuration()
     configuration.access_token = api_token
-    # configuration.host = "https://api.speechall.com/v1"  # Default host
-    configuration.host = "http://127.0.0.1:8080/v1"  # Default host
+    configuration.host = "https://api.speechall.com/v1"  # Default host
 
     # Create API client
     api_client = ApiClient(configuration)
