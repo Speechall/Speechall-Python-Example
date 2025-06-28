@@ -74,10 +74,11 @@ def list_available_models(api_instance):
 
 
 def transcribe_local_file_with_default_options(
-    api_instance, file_path, model_id="openai.whisper-1"
+    api_instance, file_path, model_id="assemblyai.best"
 ):
     """Transcribe a local audio file."""
     try:
+        print("-" * 50)
         print(f"🎤 Transcribing local file with default options: {file_path}")
         print(f"   Model: {model_id}")
         print("-" * 50)
@@ -115,10 +116,11 @@ def transcribe_local_file_with_default_options(
 
 
 def transcribe_local_file(
-    api_instance, file_path, model_id="openai.whisper-1", language="en"
+    api_instance, file_path, model_id="deepgram.nova-2-phonecall", language="en"
 ):
     """Transcribe a local audio file."""
     try:
+        print("-" * 50)
         print(f"🎤 Transcribing local file: {file_path}")
         print(f"   Model: {model_id}")
         print(f"   Language: {language}")
@@ -162,6 +164,7 @@ def transcribe_local_file(
 def transcribe_remote_url(api_instance, audio_url, model_id="openai.whisper-1"):
     """Transcribe an audio file from a remote URL."""
     try:
+        print("-" * 50)
         print(f"🌐 Transcribing remote URL: {audio_url}")
         print(f"   Model: {model_id}")
         print("-" * 50)
@@ -191,6 +194,7 @@ def transcribe_remote_url(api_instance, audio_url, model_id="openai.whisper-1"):
 def transcribe_with_advanced_features(api_instance, file_path):
     """Demonstrate advanced transcription features."""
     try:
+        print("-" * 50)
         print(f"🚀 Advanced transcription with features:")
         print(f"   File: {file_path}")
         print(f"   Features: Diarization, Custom vocabulary, Smart formatting")
@@ -205,7 +209,7 @@ def transcribe_with_advanced_features(api_instance, file_path):
 
         # Use Deepgram model which supports advanced features
         result = api_instance.transcribe(
-            model=TranscriptionModelIdentifier.ASSEMBLYAI_DOT_BEST,
+            model=TranscriptionModelIdentifier.GLADIA_DOT_STANDARD,
             body=audio_data,
             language=TranscriptLanguageCode.EN,
             output_format=TranscriptOutputFormat.JSON,
